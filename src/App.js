@@ -144,7 +144,7 @@ export default function FileUploadApp() {
                 name: item.edcrNumber || "-",
                 type: item.appliactionType || "-",
                 subtype: item.applicationSubType || "-",
-                fileUrl: item.planReport,
+                fileUrl: item.planReport.replace("http://", "https://"),
                 status:item.status
               }));        
               setTableData(formatted

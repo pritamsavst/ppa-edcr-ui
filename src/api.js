@@ -1,18 +1,18 @@
 import axios from "axios";
 const edcrInstance = axios.create({
-  baseURL: "https://ppa-demo.ddns.net",
+  baseURL: "https://dev-test.chandigarhsmartcity.in",
   headers: {
     "Content-Type": "application/json"
   }
 })
-export const loginRequest = async (username = "egovernments", password = "demo",endpoint) => {
+export const loginRequest = async (username = "user1", password = "pass@123",endpoint) => {
   let apiError = "Currently we are facing some issues. Please try again after some time.";
   var params = new URLSearchParams();
-  username && params.append("username", "egovernments");
-  password && params.append("password", "demo");
+  username && params.append("username", "user1");
+  password && params.append("password", "pass@123");
   params.append("grant_type", "password");
   try {
-    const response = await fetch(`https://ppa-demo.ddns.net/${endpoint}`, {
+    const response = await fetch(`https://dev-test.chandigarhsmartcity.in/${endpoint}`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -157,7 +157,7 @@ export const edcrHttpRequest = async (
     bodyFormData.append("planFile", file);
     let response = await axios({
       method: "post",
-      url: `https://ppa-demo.ddns.net/${endPoint}`,
+      url: `https://dev-test.chandigarhsmartcity.in/${endPoint}`,
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" }
     });
