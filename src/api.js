@@ -1,6 +1,6 @@
 import axios from "axios";
 const edcrInstance = axios.create({
-  baseURL: "https://dev-test.chandigarhsmartcity.in",
+  baseURL: "https://obps-pu.ddns.net",
   headers: {
     "Content-Type": "application/json"
   }
@@ -12,7 +12,7 @@ export const loginRequest = async (username = "user1", password = "pass@123",end
   password && params.append("password", "pass@123");
   params.append("grant_type", "password");
   try {
-    const response = await fetch(`https://dev-test.chandigarhsmartcity.in/${endpoint}`, {
+    const response = await fetch(`https://obps-pu.ddns.net${endpoint}`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -157,7 +157,7 @@ export const edcrHttpRequest = async (
     bodyFormData.append("planFile", file);
     let response = await axios({
       method: "post",
-      url: `https://dev-test.chandigarhsmartcity.in/${endPoint}`,
+      url: `https://obps-pu.ddns.net/${endPoint}`,
       data: bodyFormData,
       headers: { "Content-Type": "multipart/form-data" }
     });

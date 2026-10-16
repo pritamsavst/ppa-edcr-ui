@@ -24,6 +24,7 @@ export default function FileTable({ data }) {
 
         <tbody>
           {data?.map((item, index) => (
+            
             <tr key={index} style={{ borderBottom: "1px solid #ddd" }}>
               <td style={tdStyle}>{item.name}</td>
               <td style={tdStyle}>{item.type}</td>
@@ -41,7 +42,25 @@ export default function FileTable({ data }) {
                     textDecoration: "none",
                   }}
                 >
-                  Download
+                  Download VM
+                </a>
+              </td>
+              <td style={tdStyle}>
+             
+                <a
+                  href={item.fileUrl?.startsWith("http://")
+                  ? item.fileUrl.replace("http://", "https://")
+                  : item.fileUrl}
+                  download
+                  style={{
+                    color: "white",
+                    background: "#28a745",
+                    padding: "6px 12px",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Download non VM
                 </a>
               </td>
             </tr>

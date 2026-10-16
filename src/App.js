@@ -207,13 +207,30 @@ export default function FileUploadApp() {
           ></input>
         </div>
 
-        <div class="form-group">
+        {/* <div class="form-group">
           <label for="applicationSubType">Application SubType</label>
           <input type="text" id="subtype" 
            name="subtype"
           value={payloadData.subtype}
           onChange={handleFieldChange} ></input>
-        </div>
+        </div> */}
+        <div className="form-group">
+  <label htmlFor="applicationSubType">Application SubType</label>
+  
+  <select
+    id="subtype"
+    name="subtype"
+    value={payloadData.subtype}
+    onChange={handleFieldChange}
+    className="custom-dropdown"
+  >
+    <option value="">-- Select SubType --</option>
+    {/* <option value="NEW">NEW</option> */}
+    <option value="NEW_CONSTRUCTION">New Construction</option>
+    <option value="LAYOUT_PERMIT">Layout Approval</option>
+    <option value="ALTERATION">Addition and Alteration</option>
+  </select>
+</div>
 
         <div class="form-group">
           <label for="planFile">Select Plan File (.dxf):</label>
